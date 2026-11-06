@@ -1,0 +1,24 @@
+name: Windows build and contracts
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  windows:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: 8.0.x
+      - name: Check public source
+        shell: pwsh
+        run: ./scripts/check-public-source.ps1
+      - name: Run isolated protocol and text contracts
+        shell: pwsh
+        run: ./scripts/test.ps1
+      - name: Build portable app
+        shell: pwsh
+        run: ./package.ps1

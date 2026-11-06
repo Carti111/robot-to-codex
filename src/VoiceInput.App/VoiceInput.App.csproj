@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <TargetPlatformMinVersion>10.0.19041.0</TargetPlatformMinVersion>
+    <RootNamespace>VoiceInput.App</RootNamespace>
+    <AssemblyName>CodexVoiceInput</AssemblyName>
+    <Product>Codex Voice Input · 机器人版</Product>
+    <Description>Robot-only wireless voice input for the current Codex composer.</Description>
+    <Authors>A3Boy, Carti111 and contributors</Authors>
+    <RepositoryUrl>https://github.com/Carti111/robot-to-codex</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>0.2.1</Version>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\codex-voice-input.ico</ApplicationIcon>
+    <UseWinUI>true</UseWinUI>
+    <DefineConstants>$(DefineConstants);DISABLE_XAML_GENERATED_MAIN</DefineConstants>
+    <WindowsPackageType>None</WindowsPackageType>
+    <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <SelfContained>true</SelfContained>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.6.250602001" />
+    <PackageReference Include="Microsoft.Windows.SDK.BuildTools.MSIX" Version="1.7.260930100" PrivateAssets="all" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\codex-voice-input.ico" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="Assets\codex-voice-input.png" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VoiceInput.Core\VoiceInput.Core.csproj" />
+    <ProjectReference Include="..\VoiceInput.Robot\VoiceInput.Robot.csproj" />
+  </ItemGroup>
+</Project>

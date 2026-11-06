@@ -1,0 +1,38 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodexVoiceInput.App", "src\VoiceInput.App\VoiceInput.App.csproj", "{A84F7087-0F61-4F85-8E7E-645C535E2BA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodexVoiceInput.Core", "src\VoiceInput.Core\VoiceInput.Core.csproj", "{BBBF9988-83AA-42A6-A548-4726774ACCB2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{851AFEA5-0F3E-40E4-9914-E78B88EC40BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoiceInput.Robot", "src\VoiceInput.Robot\VoiceInput.Robot.csproj", "{5044A74B-66B7-4D32-B607-C92E650F6794}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A84F7087-0F61-4F85-8E7E-645C535E2BA1}.Debug|x64.ActiveCfg = Debug|x64
+		{A84F7087-0F61-4F85-8E7E-645C535E2BA1}.Debug|x64.Build.0 = Debug|x64
+		{A84F7087-0F61-4F85-8E7E-645C535E2BA1}.Release|x64.ActiveCfg = Release|x64
+		{A84F7087-0F61-4F85-8E7E-645C535E2BA1}.Release|x64.Build.0 = Release|x64
+		{BBBF9988-83AA-42A6-A548-4726774ACCB2}.Debug|x64.ActiveCfg = Debug|x64
+		{BBBF9988-83AA-42A6-A548-4726774ACCB2}.Debug|x64.Build.0 = Debug|x64
+		{BBBF9988-83AA-42A6-A548-4726774ACCB2}.Release|x64.ActiveCfg = Release|x64
+		{BBBF9988-83AA-42A6-A548-4726774ACCB2}.Release|x64.Build.0 = Release|x64
+		{5044A74B-66B7-4D32-B607-C92E650F6794}.Debug|x64.ActiveCfg = Debug|x64
+		{5044A74B-66B7-4D32-B607-C92E650F6794}.Debug|x64.Build.0 = Debug|x64
+		{5044A74B-66B7-4D32-B607-C92E650F6794}.Release|x64.ActiveCfg = Release|x64
+		{5044A74B-66B7-4D32-B607-C92E650F6794}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5044A74B-66B7-4D32-B607-C92E650F6794} = {851AFEA5-0F3E-40E4-9914-E78B88EC40BC}
+	EndGlobalSection
+EndGlobal
