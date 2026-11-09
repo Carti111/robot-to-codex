@@ -6,4 +6,6 @@ if (-not (Test-Path -LiteralPath $program)) {
     [System.Windows.MessageBox]::Show('Build the robot version using package.ps1 first.', 'Codex Voice Input')
     exit 1
 }
-Start-Process -FilePath $program -ArgumentList "--open-settings" -WorkingDirectory (Split-Path -Parent $program) -WindowStyle Normal
+# Explorer starts the WinUI app outside a packaged parent's identity and file virtualization.
+# Normal launch already opens the settings window and activates an existing instance.
+Start-Process -FilePath 'explorer.exe' -ArgumentList ('"' + $program + '"') -WindowStyle Hidden
