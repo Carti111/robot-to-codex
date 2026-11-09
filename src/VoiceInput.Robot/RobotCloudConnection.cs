@@ -144,7 +144,7 @@ public sealed class RobotCloudConnection(
         var tools = new RobotTools(session);
         await using var server = McpServer.Create(transport, new McpServerOptions
         {
-            ServerInfo = new() { Name = "codex-voice-input-robot", Version = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Version?.ToString(3) ?? "0.2.1" },
+            ServerInfo = new() { Name = "codex-voice-input-robot", Version = System.Reflection.Assembly.GetEntryAssembly()?.GetName().Version?.ToString(3) ?? "0.1.0" },
             ServerInstructions = RobotTools.Instructions,
             ToolCollection = [McpServerTool.Create(
                 typeof(RobotTools).GetMethod(nameof(RobotTools.VoiceInputAsync))!, tools)]

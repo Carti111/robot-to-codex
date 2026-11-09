@@ -1,6 +1,13 @@
 #Requires -RunAsAdministrator
 # Optional, manual, LocalSubnet-only rules for this specific built app. Never run by the app/build/CI.
-param([string]$ProgramPath=(Join-Path (Split-Path -Parent $PSScriptRoot) 'dist\CodexVoiceInputRobot\CodexVoiceInput.exe'))
+param([string]$ProgramPath)
+if (-not $ProgramPath) {
+    $root = Split-Path -Parent $PSScriptRoot
+    $ProgramPath = Join-Path $root 'CodexVoiceInput.exe'
+    if (-not (Test-Path -LiteralPath $ProgramPath)) {
+        $ProgramPath = Join-Path $root 'dist\CodexVoiceInputRobot\CodexVoiceInput.exe'
+    }
+}
 $ErrorActionPreference='Stop'
 $exe=(Resolve-Path -LiteralPath $ProgramPath).Path
 $sha=[Security.Cryptography.SHA256]::Create()

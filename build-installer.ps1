@@ -31,12 +31,12 @@ foreach ($file in @(Get-ChildItem -LiteralPath $payload -File -Recurse)) {
 }
 & $CompilerPath /Q ("/DMyAppVersion=" + $version) (Join-Path $projectRoot 'installer\CodexVoiceInput.iss')
 if ($LASTEXITCODE -ne 0) { throw 'Installer compilation failed.' }
-$setup = Join-Path $release ("CodexVoiceInputRobot-Setup-" + $version + ".exe")
-$zip = Join-Path $release ("CodexVoiceInputRobot-win-x64-" + $version + ".zip")
+$setup = Join-Path $release ("RobotToCodex-Setup-" + $version + ".exe")
+$zip = Join-Path $release ("RobotToCodex-win-x64-" + $version + ".zip")
 Compress-Archive -Path (Join-Path $payload '*') -DestinationPath $zip -CompressionLevel Optimal -Force
 $instructions = @(
     'Robot to Codex - Windows x64',
-    'Install the Setup EXE, or fully extract the portable ZIP and run CodexVoiceInput.exe.',
+    'Install the Setup EXE, or fully extract the portable ZIP and double-click Start.cmd.',
     'Use compatible robot firmware; enable pairing on the robot and enter its six-digit code.',
     'Select a Codex chat and click the composer. Say 开启语音输入, dictate, then say 发送.',
     'Say 退出模式 to return to normal robot chat. The computer app must stay running.',

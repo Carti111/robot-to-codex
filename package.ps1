@@ -14,6 +14,12 @@ Get-ChildItem -LiteralPath $buildRoot -Force | Copy-Item -Destination $outputRoo
 foreach ($name in @('LICENSE','THIRD_PARTY_NOTICES.md','ROBOT.md')) {
     Copy-Item -LiteralPath (Join-Path $projectRoot $name) -Destination $outputRoot -Force
 }
+Copy-Item -LiteralPath (Join-Path $projectRoot 'Start.cmd') -Destination $outputRoot -Force
+$scriptOutput = Join-Path $outputRoot 'scripts'
+New-Item -ItemType Directory -Path $scriptOutput -Force | Out-Null
+foreach ($name in @('start-robot.ps1','configure-firewall.ps1')) {
+    Copy-Item -LiteralPath (Join-Path $projectRoot ('scripts\' + $name)) -Destination $scriptOutput -Force
+}
 if (Test-Path -LiteralPath (Join-Path $projectRoot 'licenses')) {
     Copy-Item -LiteralPath (Join-Path $projectRoot 'licenses') -Destination $outputRoot -Recurse -Force
 }

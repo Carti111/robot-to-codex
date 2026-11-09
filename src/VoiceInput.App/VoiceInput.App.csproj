@@ -10,7 +10,8 @@
     <Authors>A3Boy, Carti111 and contributors</Authors>
     <RepositoryUrl>https://github.com/Carti111/robot-to-codex</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>0.2.1</Version>
+    <Version>0.1.0</Version>
+    <IncludeSourceRevisionInInformationalVersion>false</IncludeSourceRevisionInInformationalVersion>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\codex-voice-input.ico</ApplicationIcon>
     <UseWinUI>true</UseWinUI>

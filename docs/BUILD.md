@@ -47,9 +47,9 @@ cd robot-to-codex
 .\build-installer.ps1 -CompilerPath 'C:\Program Files (x86)\Inno Setup 6\ISCC.exe'
 ```
 
-输出在 `dist/releases`：安装包、便携 ZIP、SHA256SUMS 和使用说明。安装器可创建桌面/开始菜单快捷方式；本仓库的 GitHub Actions 只构建和测试，不自动发布 Release。不要把构建安装包理解为已经获得新板型硬件验证。
+输出在 `dist/releases`，包含 RobotToCodex-Setup-0.1.0.exe、RobotToCodex-win-x64-0.1.0.zip、SHA256SUMS.txt 和使用说明。安装器可创建桌面/开始菜单快捷方式；本仓库的 GitHub Actions 只构建和测试，不自动发布 Release。不要把构建安装包理解为已经获得新板型硬件验证。
 
-当前应用版本保持 0.2.1，程序集/程序名保留上游兼容命名 CodexVoiceInput。源码仓库名称为 Robot to Codex；没有为了本次上传增加版本号或后缀。
+当前应用版本为 0.1.0，程序集/程序名沿用 CodexVoiceInput，仓库及发行版名称为 Robot to Codex。
 
 ## 目录与安全
 

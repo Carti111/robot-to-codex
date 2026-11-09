@@ -1,6 +1,6 @@
 # CVI1：机器人到 Codex 的当前接口
 
-版本：线协议 v1，桌面 0.2.1。本文为当前实现，不是标准 MCP，也不是 Codex/OpenAI API。仅描述格式和合成示例，不包含真实凭证。最终实现见 `src/VoiceInput.Robot`。
+版本：线协议 v1，桌面 0.1.0。本文为当前实现，不是标准 MCP，也不是 Codex/OpenAI API。仅描述格式和合成示例，不包含真实凭证。最终实现见 `src/VoiceInput.Robot`。
 
 ## 1. 网络角色
 

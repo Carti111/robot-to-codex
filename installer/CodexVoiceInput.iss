@@ -1,6 +1,6 @@
 #define MyAppName "Codex Voice Input · 机器人版"
 #ifndef MyAppVersion
-  #define MyAppVersion "0.2.1"
+  #define MyAppVersion "0.1.0"
 #endif
 #define MyAppPublisher "Codex Voice Input Robot"
 #define MyAppExeName "CodexVoiceInput.exe"
@@ -18,7 +18,7 @@ ArchitecturesAllowed=x64compatible
 ArchitecturesInstallIn64BitMode=x64compatible
 MinVersion=10.0.19041
 OutputDir=..\dist\releases
-OutputBaseFilename=CodexVoiceInputRobot-Setup-{#MyAppVersion}
+OutputBaseFilename=RobotToCodex-Setup-{#MyAppVersion}
 SetupIconFile=..\src\VoiceInput.App\Assets\codex-voice-input.ico
 LicenseFile=..\LICENSE
 Compression=lzma2/normal

@@ -6,7 +6,7 @@
 
 A Windows desktop companion that turns a compatible voice robot into a dictation input for the current Codex chat. Pair over your LAN, dictate into the draft, and explicitly say “发送” to submit. Includes a documented integration protocol for custom robots.
 
-本仓库是电脑端软件与机器人接入规范，基于 [A3Boy/codex-voice-input](https://github.com/A3Boy/codex-voice-input) 改造。开发版本保持 **0.2.1**。
+本仓库是电脑端软件与机器人接入规范，基于 [A3Boy/codex-voice-input](https://github.com/A3Boy/codex-voice-input) 改造。当前发行版本为 **v0.1.0**。
 
 ## 先确认：你的机器人能不能用
 
@@ -49,9 +49,9 @@ flowchart LR
 
 需要 Windows 10 2004（19041）或更新版本 / Windows 11、x64、Codex 桌面应用，以及兼容机器人。电脑和机器人应位于可互通的局域网；电脑接网线也可以。
 
-当前先提供源码。请按 [构建说明](docs/BUILD.md) 生成便携程序；不要把 GitHub 的源码 ZIP 当作安装包。本次源码公开不等于已经发布新的安装程序。
+从 [v0.1.0 下载页](https://github.com/Carti111/robot-to-codex/releases/tag/v0.1.0) 获取 Windows x64 版本。安装包为 `RobotToCodex-Setup-0.1.0.exe`，安装后通过桌面或开始菜单图标启动。便携版为 `RobotToCodex-win-x64-0.1.0.zip`，完整解压后双击 `Start.cmd`。自行编译请看 [构建说明](docs/BUILD.md)。
 
-1. 构建后运行 `Start.cmd`，或运行 `dist/CodexVoiceInputRobot/CodexVoiceInput.exe`。便携目录需要完整保留。
+1. 安装后点击桌面图标，或在完整解压的便携目录双击 `Start.cmd`。
 2. 在机器人上通过实体操作开启配对，让它显示六位码。参考 SparkBot 是待机长触顶部约 3 秒；其他机器人由其固件定义。
 3. 电脑点“添加机器人”，选中设备并输入六位码。码会直接显示，成功或取消后清空。
 4. 配对成功后，等待“已连接”。换电脑时重新无线配对，无需把私钥或登录文件拷过去。

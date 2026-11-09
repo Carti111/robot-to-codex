@@ -1,6 +1,17 @@
-# Development notes
+# Changelog
 
-## Current development snapshot — 0.2.1
+
+## v0.1.0 — 2026-11-09
+
+- First packaged Windows x64 release with installer, portable ZIP and SHA256 checksums.
+- Wireless Security2 pairing, TLS reconnect and robot dictation into the current Codex draft.
+- Explicit voice send and exit, device-local mode lock, bounded queues and no automatic replay.
+- Robot/history/settings UI, visible pairing code, tray and light/dark appearance.
+- Generic robot integration guide, CVI1 protocol and an isolated adapter example.
+- Explorer-based launcher avoids inherited Windows package identity and split pairing data.
+- Portable package includes Start.cmd and an optional manual LAN firewall helper.
+
+## Development source snapshot — 0.2.1
 
 - Robot-only Windows companion for dictating into the current Codex composer.
 - LAN discovery, expiring wireless Security2 pairing and TLS transport.
