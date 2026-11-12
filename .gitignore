@@ -35,3 +35,11 @@ xiaozhi-endpoint.bin
 *.pem
 *.crt
 __pycache__/
+
+# Public firmware: keep licensed build resources; ignore generated output/data.
+firmware/source/managed_components/
+firmware/source/build/
+firmware/logs/
+firmware/source/logs/
+!firmware/source/main/assets/**/*.ogg
+!firmware/source/main/boards/*/config.json

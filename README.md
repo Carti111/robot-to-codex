@@ -1,12 +1,37 @@
-# Robot to Codex · 机器人语音输入 Codex
+# Robot to Codex · 桌面机器人的无线语音输入
 
-<img src="src/VoiceInput.App/Assets/codex-voice-input.png" width="88" alt="Robot to Codex 应用图标" />
+**基于 ESP32-S3 / 小智的桌面机器人改造项目：把语音写进电脑草稿，核对后再用口令发送。**
 
-**把语音机器人的听写内容，输入到你当前选中的 Codex 聊天。** 先看屏幕核对草稿，单独说“发送”才提交；说“退出模式”后恢复机器人原来的聊天。
+机器人保留日常聊天，也可以切换到固定听写模式，通过局域网连接 Windows 电脑。这个仓库同时提供电脑端软件、参考机器人固件源码、接入协议与项目开发说明。
 
-A Windows desktop companion that turns a compatible voice robot into a dictation input for the current Codex chat. Pair over your LAN, dictate into the draft, and explicitly say “发送” to submit. Includes a documented integration protocol for custom robots.
+A desktop robot project combining ESP32-S3 firmware, paired LAN transport and a Windows dictation companion. Built on open-source projects; includes source, integration docs and engineering case studies.
 
-本仓库是电脑端软件与机器人接入规范，基于 [A3Boy/codex-voice-input](https://github.com/A3Boy/codex-voice-input) 改造。当前发行版本为 **v0.1.0**。
+**快速了解：** [项目介绍与贡献边界](docs/PROJECT.md) · [架构与源码导读](docs/ARCHITECTURE.md) · [三个开发案例](docs/ENGINEERING.md) · [固件源码与构建](firmware/README.md) · [验证范围](docs/SHOWCASE_VALIDATION.md)
+
+![机器人功能页源码渲染预览](docs/images/robot-function-pages.png)
+
+*上图由机器人生产页面代码和 LVGL 软件渲染器生成，展示时钟、听写、木鱼、骰子与 2048；属于界面预览，不是实机照片或运行视频。木鱼、骰子等功能沿用并适配原厂实现与素材，来源见下方项目说明。*
+
+## 一条完整的交互流程
+
+1. 机器人与电脑完成一次无线配对。
+2. 在 Codex 中点击目标输入框，说“开启语音输入”。
+3. 口述正文，文字先进入草稿；机器人收到写入确认后给出提示音。
+4. 核对屏幕，单独说“发送”才提交。
+5. 说“退出模式”恢复聊天；连接异常时暂停并作废旧队列，避免恢复后补发。
+
+## 本项目的开发重点
+
+| 工作 | 实现与目的 |
+| --- | --- |
+| 机器人到电脑的无线链路 | ESP-IDF Security2 配对、TLS 传输、局域网发现与身份保存 |
+| 确定的听写交互 | 固件模式锁、逐轮授权、完成确认、独立发送/退出口令 |
+| 实机功能整合 | 将原厂时钟、木鱼、骰子、2048 等适配到小智工程，调整触摸、手势和摄像头预览 |
+| 交付与验证 | Windows 安装/便携入口、协议契约测试、固件状态测试和使用文档 |
+
+语音识别和聊天使用小智在线服务；电脑端基于 [A3Boy/codex-voice-input](https://github.com/A3Boy/codex-voice-input) 改造。项目开发使用 AI 辅助，需求取舍、集成、实机反馈与验收过程见 [项目说明](docs/PROJECT.md)。
+
+**版本说明：** 电脑端公开发行版仍为 **v0.1.0**，本次不改变版本或安装包。[新增固件源码](firmware/source) 对应本机小智 **v1.9.4** 改造工程；历史整机验证使用的是本机电脑端 **0.2.1**。两条电脑端版本线、历史实机记录与本次源码检查的区别见 [验证说明](docs/SHOWCASE_VALIDATION.md)。
 
 ## 先确认：你的机器人能不能用
 
@@ -87,6 +112,7 @@ tests/                  自动化契约测试
 scripts/                测试、启动、可选局域网防火墙配置
 installer/              Inno Setup 安装配置，需自行构建
 docs/                   使用、接入、协议、构建和安全说明
+firmware/               SparkBot 参考固件源码、构建与无硬件状态测试
 ```
 
 其中 `UsbRobotFeedback` 是沿用旧名称的共用协议引擎，桌面日常使用连接的是 Wi-Fi TLS，并不要求 USB。库中保留了 MCP/串口兼容实现与相关测试，当前桌面入口不启动它们；它们不是接入新机器人的推荐入口。

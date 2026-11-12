@@ -1,0 +1,16 @@
+managed_components/
+build/
+logs/
+.vscode/
+.devcontainer/
+.cache/
+tmp/
+sdkconfig.old
+.env
+releases/
+__pycache__/
+*.pyc
+.DS_Store
+main/assets/lang_config.h
+main/mmap_generate_emoji.h
+mmap_generate_*.h
